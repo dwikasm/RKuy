@@ -13,7 +13,7 @@ class DataTransaksiTableSeeder extends Seeder
     public function run()
     {
         DB::table('data_transaksi')->insert([
-            'waktu_transaksi' => ,
+            'waktu_transaksi' => '2017-05-18 08:30:00',
             'customer' => 'James Howlett',
             'total_harga_t' => 2000000,
             'keuntungan' => 200000,

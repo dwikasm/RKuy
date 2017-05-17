@@ -15,7 +15,7 @@ class CreateDataQuotationTable extends Migration
     {
         Schema::create('data_quotation', function (Blueprint $table) {
             $table->increments('id_quotation');
-            $table->timestamps('waktu_quotation');
+            $table->timestamp('waktu_quotation');
             $table->string('customer');
             $table->float('total_harga_q', 10, 2); 
         });  

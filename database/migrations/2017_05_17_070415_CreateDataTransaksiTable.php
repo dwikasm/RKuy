@@ -15,7 +15,7 @@ class CreateDataTransaksiTable extends Migration
     {
         Schema::create('data_transaksi', function (Blueprint $table) {
             $table->increments('id_transaksi');
-            $table->timestamps('waktu_transaksi');
+            $table->timestamp('waktu_transaksi');
             $table->string('customer');
             $table->float('total_harga_t', 10, 2); 
             $table->float('keuntungan', 10, 2);
