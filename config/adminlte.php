@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'PT Maju Jaya',
 
     'title_prefix' => '',
 
@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'transaksi',
 
     'logout_url' => 'logout',
 

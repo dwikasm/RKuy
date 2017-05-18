@@ -29,6 +29,22 @@ Route::get('/laporankeuangan', function () {
 Route::get('/transaksi/tambah', function () {
     return view('/transaksi/tambahtransaksi');
 });
+Route::get('/transaksi/detail', function () {
+    return view('/transaksi/detailtransaksi');
+});
+Route::get('/quotation/tambah', function () {
+    return view('/quotation/tambahquotation');
+});
+Route::get('/quotation/cetak', function () {
+    return view('/quotation/cetakquotation');
+});
+Route::get('/kelolabarang/tambah', function () {
+    return view('/kelolabarang/tambahkelola');
+});
+Route::get('/kelolabarang/test', function () {
+    return view('/kelolabarang/test');
+});
+
 
 Auth::routes();
 

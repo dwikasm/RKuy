@@ -6,7 +6,7 @@
 <h4><i class="fa fa-home"></i> Tabel Transaksi</h4><hr>
 <div class=row>
 	<div class="col-md-2">
-     <a href="/transaksi/create" class="btn btn-primary">
+     <a href={{Url('/transaksi/tambah')}} class="btn btn-primary">
        <i class="fa fa-plus-circle"></i> Tambah Transaksi</a>
     </div>
     <div class="col-md-2">
@@ -56,7 +56,8 @@
 			        <td>RS Puri Raharja</td>
 			        <td>Rp.80.000.000</td>
 			        <td>
-			        	<button type="button" class="btn btn-default">Lihat</button>
+              <a href="{{Url('/transaksi/detail')}}"
+			        	<button type="button" class="btn btn-default">Lihat</button></a>
 			        	<button type="button" class="btn btn-danger">Hapus</button>
 			        </td>
 			       

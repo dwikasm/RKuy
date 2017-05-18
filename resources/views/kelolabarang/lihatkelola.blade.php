@@ -5,7 +5,7 @@
 <div class="panel panel-default"><div class="panel-body">
 <h4><i class="fa fa-home"></i> Tabel Produk</h4><hr>
 <div class=row><div class="col-md-6">
-     <a href="/dosen/create" class="btn btn-primary">
+     <a href="{{Url('kelolabarang/tambah')}}" class="btn btn-primary">
        <i class="fa fa-plus-circle"></i> Tambah Produk</a></div>
 	<div class="col-md-2"> </div>
 <!-- Form Pencarian -->
