@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/transaksi', 'TransaksiController@lihat');
 Route::get('/transaksi/detail', 'TransaksiController@detail');
 Route::get('/transaksi/tambah', 'TransaksiController@tambah');
+Route::get('/transaksi/deliveryorder', 'TransaksiController@deliveryorder');
 //Quotation
 Route::get('/quotation', 'QuotationController@lihat');
 Route::get('/quotation/cetak', 'QuotationController@cetak');

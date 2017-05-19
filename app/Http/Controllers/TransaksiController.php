@@ -18,4 +18,8 @@ class TransaksiController extends Controller
     {
     	return view('/transaksi/tambahtransaksi');
     }
+    public function deliveryorder()
+    {
+        return view('/transaksi/deliveryorder');
+    }
 }

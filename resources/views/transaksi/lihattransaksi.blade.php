@@ -6,19 +6,19 @@
 <h4><i class="fa fa-home"></i> Tabel Transaksi</h4><hr>
 <div class=row>
 	<div class="col-md-2">
-     <a href={{Url('/transaksi/tambah')}} class="btn btn-primary">
+     <a href="{{Url('/transaksi/tambah')}}" class="btn btn-primary">
        <i class="fa fa-plus-circle"></i> Tambah Transaksi</a>
     </div>
     <div class="col-md-2">
-    	<a href="/deliveryorder" class="btn btn-default">
+    	<a href="{{Url('/transaksi/deliveryorder')}}" class="btn btn-default">
        <i class="fa fa-plus-circle"></i> Buat Delivery Order</a>
     </div>
     <div class="col-md-2">
-    	<a href="/paymentreceipt" class="btn btn-default">
+    	<a href="{{Url('/transaksi/paymentreceipt')}}" class="btn btn-default">
        <i class="fa fa-plus-circle"></i> Buat Payment Receipt</a>
     </div>
     <div class="col-md-2">
-    	<a href="/proofoir" class="btn btn-default">
+    	<a href="{{Url('/transaksi/proofoir')}}" class="btn btn-default">
        <i class="fa fa-plus-circle"></i> Buat Proof of Item Receipt</a>
     </div>
 </div>
