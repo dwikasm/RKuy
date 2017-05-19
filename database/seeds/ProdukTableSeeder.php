@@ -13,28 +13,30 @@ class ProdukTableSeeder extends Seeder
     public function run()
     {
         DB::table('produk')->insert([
+            [
             'nama_produk' => 'Oxygen Checker',
             'jumlah' => 112,
             'harga_jual' => 1000000,
             'harga_beli' => 900000,
-        ]);
-        DB::table('produk')->insert([
+            ],
+            [
             'nama_produk' => 'CO2 Checker',
             'jumlah' => 80,
             'harga_jual' => 1000000,
             'harga_beli' => 900000,
-        ]);
-        DB::table('produk')->insert([
+            ],
+            [
             'nama_produk' => 'CO2 Mask',
             'jumlah' => 962,
             'harga_jual' => 100000,
             'harga_beli' => 90000,
-        ]);
-        DB::table('produk')->insert([
+            ],
+            [
             'nama_produk' => 'Oxygen Mask',
             'jumlah' => 1002,
             'harga_jual' => 100000,
             'harga_beli' => 90000,
+            ],
         ]);
 
     }

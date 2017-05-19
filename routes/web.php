@@ -14,38 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/transaksi', function () {
-    return view('/transaksi/lihattransaksi');
-});
-Route::get('/quotation', function () {
-    return view('/quotation/lihatquotation');
-});
-Route::get('/kelolabarang', function () {
-    return view('/kelolabarang/lihatkelola');
-});
-Route::get('/laporankeuangan', function () {
-    return view('laporankeuangan');
-});
-Route::get('/transaksi/tambah', function () {
-    return view('/transaksi/tambahtransaksi');
-});
-Route::get('/transaksi/detail', function () {
-    return view('/transaksi/detailtransaksi');
-});
-Route::get('/quotation/tambah', function () {
-    return view('/quotation/tambahquotation');
-});
-Route::get('/quotation/cetak', function () {
-    return view('/quotation/cetakquotation');
-});
-Route::get('/kelolabarang/tambah', function () {
-    return view('/kelolabarang/tambahkelola');
-});
-Route::get('/kelolabarang/test', function () {
-    return view('/kelolabarang/test');
-});
-
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Transaksi
+Route::get('/transaksi', 'TransaksiController@lihat');
+Route::get('/transaksi/detail', 'TransaksiController@detail');
+Route::get('/transaksi/tambah', 'TransaksiController@tambah');
+//Quotation
+Route::get('/quotation', 'QuotationController@lihat');
+Route::get('/quotation/cetak', 'QuotationController@cetak');
+Route::get('/quotation/tambah', 'QuotationController@tambah');
+//Kelola Barang
+Route::get('/kelolabarang', 'KelolaController@lihat');
+Route::get('/kelolabarang/tambah', 'KelolaController@tambah');
+Route::get('/kelolabarang/test', 'KelolaController@test');
+//Laporan Keuangan
+Route::get('/laporankeuangan', 'LaporanController@laporan');
+
