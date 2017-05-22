@@ -30,24 +30,25 @@
 				        <th>#</th>
 				        <th>Id Produk</th>
 				        <th>Nama Produk</th>
-				        <th>Stok Barang</th>
-				        <th>Harga Jual</th>
-				        <th>Harga Beli</th>
+				        <th>Harga</th>
+                <th>Stok Barang</th>
       				</tr>
     			</thead>
     			<tbody>
-      			<tr>
-			        <td>1</td>
-			        <td>prod001</td>
-			        <td>Kursi Roda</td>
-			        <td>5</td>
-			        <td>Rp.6.500.000</td>
-			        <td>Rp.5.000.000</td>
-			        <td>
-			        	<button type="button" class="btn btn-primary">Edit</button>
-			        	<button type="button" class="btn btn-danger">Hapus</button>
-			        </td>
-      			</tr>
+      			@foreach($produks as $key => $value)
+            <tr>
+              <td></td>
+              <td>{{ $value->id_pro }}</td>
+              <td>{{ $value->nama_pro }}</td>
+              <td>{{ $value->harga }}</td>
+              <td>{{ $value->stok }}</td>
+              <td>
+              <a href="{{Url('/transaksi/detail')}}"
+                <button type="button" class="btn btn-default">Lihat</button></a>
+                <button type="button" class="btn btn-danger">Hapus</button>
+              </td>
+            </tr>
+            @endforeach
     			</tbody>
  			 </table>
   		</div>

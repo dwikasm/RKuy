@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Produk;
+
 class KelolaController extends Controller
 {
     public function lihat()
     {
-    	return view('/kelolabarang/lihatkelola');
+    	//return view('/kelolabarang/lihatkelola');
+        $produks = Produk::all();
+        return view('/kelolabarang/lihatkelola', compact('produks'));
     }
     public function tambah(Request $request)
     {
