@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use App\Quotation;
 
 class DataQuotationTableSeeder extends Seeder
 {
@@ -12,10 +13,14 @@ class DataQuotationTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('data_quotation')->insert([
-            'waktu_quotation' => '2017-05-18 08:00:00',
-            'customer' => 'James Howlett',
-            'total_harga_q' => 2000000,
-        ]);
+        DB::table('data_quotation')->delete();
+
+        $data = new Quotation();
+        $data->id_quo = 1;
+        $data->save();
+
+        $data = new Quotation();
+        $data->id_quo = 2;
+        $data->save();
 	}
 }
