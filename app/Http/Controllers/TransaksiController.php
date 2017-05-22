@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\DataTransaksi;
 use App\Transaksi;
+use App\Produk;
+use DB;
 
 class TransaksiController extends Controller
 {
@@ -14,9 +16,14 @@ class TransaksiController extends Controller
         return view('transaksi.lihattransaksi', compact('transaksis'));
 
     }
-    public function detail()
+    public function detail($id)
     {
-        return view('/transaksi/detailtransaksi');
+        $results = DB::select("SELECT* 
+                FROM produk
+                INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
+                WHERE data_quotation_produk.id_quo = ".$id);
+        //dd($results);
+        return view('/transaksi/detailtransaksi', compact('results'));
     }
     public function tambah()
     {
@@ -24,6 +31,7 @@ class TransaksiController extends Controller
     }
     public function deliveryorder()
     {
+        // print($results);
         return view('/transaksi/deliveryorder');
     }
     public function paymentreceipt(){
