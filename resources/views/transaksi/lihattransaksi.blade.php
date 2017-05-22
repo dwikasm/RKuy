@@ -54,10 +54,10 @@
               <td></td>
               <td>{{ $value->id_tr }}</td>
               <td>{{ $value->customer }}</td>
-              <td>{{ $value->alamt }}</td>
+              <td>{{ $value->alamat }}</td>
               <td>{{ $value->created_at }}</td>
               <td>
-              <a href="{{Url('/transaksi/detail')}}"
+              <a href="{{Url('/transaksi/detail',$value->id_tr)}}">
                 <button type="button" class="btn btn-default">Lihat</button></a>
                 <button type="button" class="btn btn-danger">Hapus</button>
               </td>

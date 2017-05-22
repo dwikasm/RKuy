@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\DataTransaksi;
 use App\Transaksi;
+use App\DataQuotationProduk;
 
 class TransaksiController extends Controller
 {
@@ -14,9 +15,11 @@ class TransaksiController extends Controller
         return view('transaksi.lihattransaksi', compact('transaksis'));
 
     }
-    public function detail()
+    public function detail($id)
     {
-        return view('/transaksi/detailtransaksi');
+        $trans = Transaksi::findOrFail($id);
+        return view('/transaksi/detailtransaksi',compact('trans'));
+        // return view('/transaksi/detailtransaksi');
     }
     public function tambah()
     {
