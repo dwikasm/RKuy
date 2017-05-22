@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Produk;
 
-use App\Produk;
-
 class KelolaController extends Controller
 {
     public function lihat()
@@ -25,6 +23,7 @@ class KelolaController extends Controller
         $Prod->harga = $request->harga;
         $Prod->stok = $request->stok;
         $Prod->save();
+
         return redirect()->route('/kelolabarang/lihatkelola')->with('alert-success','Data Berhasil Disimpan');
     	
     }
