@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DataTransaksi;
 
 class TransaksiController extends Controller
 {
     public function lihat()
     {
+        $data = DataTransaksi::all();
+        dd($data);
     	return view('/transaksi/lihattransaksi');
     }
     public function detail()
