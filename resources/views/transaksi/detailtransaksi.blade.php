@@ -7,21 +7,41 @@
         <h4><i class="fa fa-eye"></i> Detail Transaksi</h4>
       </div>
       <div class="panel-body">
-        <div class="row">
-          
+
+        <div class=row>
+          <div class="col-md-2">
+            <a href="{{Url('/transaksi/deliveryorder')}}" class="btn btn-primary btn-sm">
+             <i class="fa fa-plus-circle"></i> Buat Delivery Order</a>
+          </div>
+          <div class="col-md-2">
+            <a href="{{Url('/transaksi/paymentreceipt')}}" class="btn btn-primary btn-sm">
+             <i class="fa fa-plus-circle"></i> Buat Payment Receipt</a>
+          </div>
+          <div class="col-md-2">
+            <a href="{{Url('/transaksi/proofoir')}}" class="btn btn-primary btn-sm">
+             <i class="fa fa-plus-circle"></i> Buat Proof of Item Receipt</a>
+          </div>
         </div>
+        <br></br>
+        <div class=row>
+          <div class="col-md-12">                                                                                      
+            <div class="table-responsive">          
+              <table id="table" class="table table-bordered table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th>Nama Barang</th>
+                    <th>Jumlah Barang</th>
+                    <th>Harga Satuan</th>
+                    <th>Total Harga</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
         <!-- /.row -->
       </div>
     </div>  
-@stop
-@section('css')
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-@stop
-@section('js')
-    <script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
-    <script>
-      $(document).ready(function(){
-        $('#myTable').DataTable();
-    });
-    </script>
+  </div>
 @stop
