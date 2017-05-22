@@ -12,17 +12,19 @@ class ProdukTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('produk')->delete();
+        
         DB::table('produk')->insert([
             'id_pro' => 1,
             'nama_pro' => 'Oxygen Checker',
             'stok' => 112,
-            'harga' => 1000000
+            'harga' => 22000
         ]);
         DB::table('produk')->insert([
             'id_pro' => 2,
             'nama_pro' => 'CO2 Checker',
             'stok' => 80,
-            'harga' => 1000000
+            'harga' => 10000
         ]);
         DB::table('produk')->insert([
             'id_pro' => 3,

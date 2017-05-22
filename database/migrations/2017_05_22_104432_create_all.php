@@ -48,12 +48,12 @@ class CreateAll extends Migration
             $table->timestamp('created_at')->useCurrent();
         });
         Schema::table('data_transaksi', function (Blueprint $table) {
-            $table->foreign('id_quo')->references('id_quo')->on('data_quotation');
+            $table->foreign('id_quo')->references('id_quo')->on('data_quotation')->onDelete('cascade');;
         });
 
         Schema::table('data_quotation_produk', function (Blueprint $table) {
-            $table->foreign('id_quo')->references('id_quo')->on('data_quotation');
-            $table->foreign('id_pro')->references('id_pro')->on('produk');
+            $table->foreign('id_quo')->references('id_quo')->on('data_quotation')->onDelete('cascade');;
+            $table->foreign('id_pro')->references('id_pro')->on('produk')->onDelete('cascade');;
         });
 
         Schema::table('deliveryorder', function (Blueprint $table) {

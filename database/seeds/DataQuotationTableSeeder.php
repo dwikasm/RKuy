@@ -13,6 +13,8 @@ class DataQuotationTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('data_quotation')->delete();
+
         $data = new Quotation();
         $data->id_quo = 1;
         $data->save();
