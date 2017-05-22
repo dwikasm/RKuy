@@ -117,7 +117,7 @@ return [
         [
             'text'        => 'Transaksi',
             'url'         => 'admin/pages',
-            'icon'        => 'bank',
+            'icon'        => 'suitcase',
             'url'         => '/transaksi',
             // 'label'       => 4,
             // 'label_color' => 'success',
@@ -132,7 +132,7 @@ return [
         [
             'text' => 'Kelola Barang',
             'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'icon' => 'archive',
             'url'  => '/kelolabarang',
         ],
         // [
