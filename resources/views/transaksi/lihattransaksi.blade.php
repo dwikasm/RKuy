@@ -6,36 +6,42 @@
       <div class="panel-heading">
         <h4><i class="fa fa-bank"></i> List Transaksi</h4>
       </div>
-      <!-- /.col-md-12 -->
-      <div class="col-md-12">                                                                                      
-        <div class="table-responsive">          
-          <table id="myTable" class="table table-bordered table-condensed table-hover">
-            <thead>
-              <tr>
-                <th>Tanggal Dibuat</th>
-                <th>ID Transaksi</th>
-                <th>ID Quotation</th>
-                <th>Customer</th>
-                <th>Alamat</th>
-                <th>Detail</th>
-              </tr>
-            </thead>
-            <tbody>
-            @foreach($transaksis as $key => $value)
-              <tr>
-                <td>{{ $value->created_at }}</td>
-                <td>{{ $value->id_tr }}</td>
-                <td>{{ $value->id_quo }}</td>
-                <td>{{ $value->customer }}</td>
-                <td>{{ $value->alamat }}</td>
-                <td><a href="{{Url('/transaksi/detail/'.$value->id_quo)}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+      <div class="panel-body">
+        <div class=row>
+          <div class="col-md-12" style="padding-bottom: 1.5rem">
+            <a href="{{Url('/transaksi/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Transaksi</a>
+          </div>
+          <!-- /.col-md-12 -->
+          <div class="col-md-12">
+            <div class="table-responsive">          
+              <table id="myTable" class="table table-bordered table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th width="80">ID Transaksi</th>
+                    <th width="80">ID Quotation</th>
+                    <th>Customer</th>
+                    <th>Alamat</th>
+                    <th>Tanggal Dibuat</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                @foreach($transaksis as $key => $value)
+                  <tr>
+                    <td class="text-center">{{ $value->id_tr }}</td>
+                    <td class="text-center">{{ $value->id_quo }}</td>
+                    <td>{{ $value->customer }}</td>
+                    <td>{{ $value->alamat }}</td>
+                    <td>{{ $value->created_at }}</td>
+                    <td><a href="{{Url('/transaksi/detail/'.$value->id_quo)}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
         <!-- /.row -->
-
       </div>
     </div>  
 @stop
