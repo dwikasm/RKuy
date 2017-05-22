@@ -35,11 +35,31 @@
                       <a href="{{Url('/kelolabarang/edit/'.$value->id_pro)}}">
                         <button type="button" class="btn btn-default btn-sm">Edit</button>
                       </a>
-                      <a href="{{Url('/kelolabarang/delete/'.$value->id_pro)}}">
-                        <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                      </a>
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal{{$value->id_pro}}">Hapus</button>
                     </td>
                   </tr>
+                  
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal{{$value->id_pro}}" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                        <div class="modal-header bg-red">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Anda Yakin?</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>Proses ini akan menghapus {{$value->nama_pro}}.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="pull-left btn btn-default btn-sm" data-dismiss="modal">Tidak</button>
+                          <a href="{{Url('/kelolabarang/delete/'.$value->id_pro)}}"><button type="button" class="btn btn-default btn-sm">Iya, hapus</button>
+                      </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   @endforeach
                 </tbody>
               </table>
