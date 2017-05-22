@@ -22,11 +22,6 @@ class TransaksiController extends Controller
     }
     public function detail($id)
     {
-
-        $trans = Transaksi::findOrFail($id);
-        return view('/transaksi/detailtransaksi',compact('trans'));
-        // return view('/transaksi/detailtransaksi');
-
         $results = DB::select("SELECT* 
                 FROM produk
                 INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
