@@ -17,6 +17,7 @@ class CreateDataQuotationTable extends Migration
             $table->increments('id_quotation');
             $table->timestamp('waktu_quotation');
             $table->string('customer');
+            $table->string('alamat');
             $table->float('total_harga_q', 10, 2); 
         });  
     }

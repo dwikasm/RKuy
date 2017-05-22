@@ -10,8 +10,15 @@ class KelolaController extends Controller
     {
     	return view('/kelolabarang/lihatkelola');
     }
-    public function tambah()
+    public function tambah(Request $request)
     {
+        $mk = new matkul();
+        $mk->nama = $request->nama;
+        $mk->sks = $request->sks;
+        $mk->semester = $request->semester;
+        $mk->jurusan = "Teknik Informatika";
+        $mk->save();
+        return redirect()->route('matkul.index')->with('alert-success','Data Berhasi Disimpan');
     	return view('/kelolabarang/tambahkelola');
     }
     public function test()
