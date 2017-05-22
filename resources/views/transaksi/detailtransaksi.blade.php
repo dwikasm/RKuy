@@ -67,6 +67,9 @@
             </div>
             <!-- /.box-body -->
           </div>
+        </div>
+      </div>
+    </section>
           <!-- /.box -->
 <script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
           
