@@ -2,14 +2,9 @@
 @section('title', 'SI Maju Jaya')
 @section('content_header')@stop
 @section('content')
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css
-">
-<div class="panel panel-default">
-  <div class="panel-body">
-    <h4><i class="fa fa-home"></i> Tabel Transaksi</h4>
-    <div class=row>
-      <div class="col-md-12 text-left" style="margin-bottom: 1.5rem">
-        <a href="{{Url('/transaksi/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Transaksi</a>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><i class="fa fa-bank"></i> List Transaksi</h4>
       </div>
       <!-- /.col-md-12 -->
       <div class="col-md-12">                                                                                      
@@ -39,17 +34,18 @@
             </tbody>
           </table>
         </div>
+        <!-- /.row -->
       </div>
-    </div>
-    <!-- /.row -->
-  </div>
-</div>
-
-<script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
-          
-<script>
-  $(document).ready(function(){
-    $('#myTable').DataTable();
-});
-</script>
+    </div>  
+@stop
+@section('css')
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+@stop
+@section('js')
+    <script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
+    <script>
+      $(document).ready(function(){
+        $('#myTable').DataTable();
+    });
+    </script>
 @stop
