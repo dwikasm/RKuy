@@ -7,5 +7,7 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <div class="callout callout-success">
+      <h4><i class="fa fa-check"></i> You are logged in!</h4>
+    </div>
 @stop
