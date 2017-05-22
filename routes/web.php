@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Transaksi
 Route::get('/transaksi', 'TransaksiController@lihat');
-Route::get('/transaksi/detail', 'TransaksiController@detail');
+Route::get('/transaksi/detail/{id}', 'TransaksiController@detail');
 Route::get('/transaksi/tambah', 'TransaksiController@tambah');
 Route::get('/transaksi/deliveryorder', 'TransaksiController@deliveryorder');
 Route::get('/transaksi/paymentreceipt', 'TransaksiController@paymentreceipt');
