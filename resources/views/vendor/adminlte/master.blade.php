@@ -17,9 +17,9 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
 
-    <script src="//cdn.datatables.net/v/bs/dt-1.10.13/datatables.min.js"></script>
-
     <script src="{{ asset('vendor/adminlte/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+
+    <script src="http://cdn.datatables.net/v/bs/dt-1.10.13/datatables.min.js"></script>
     
     <script src="{{ asset('vendor/adminlte/bootstrap/js/bootstrap.min.js') }}"></script>
     
