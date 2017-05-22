@@ -4,7 +4,7 @@
 @section('content')
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4><i class="fa fa-bank"></i> List Transaksi</h4>
+        <h4><i class="fa fa-suitcase"></i> List Transaksi</h4>
       </div>
       <div class="panel-body">
         <div class=row>
