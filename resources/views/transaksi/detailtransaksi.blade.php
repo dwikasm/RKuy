@@ -1,6 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'AdminLTE')
-@section('adminite_css')
+@section('title', 'SI Maju Jaya')
 @section('content_header')@stop
 @section('content')
 
@@ -44,24 +43,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($results as $key => $value)
                   <tr>
-                    <td>Kursi Roda</td>
-                    <td>5</td>
-                    <td>Rp6.000.000</td>
-                    <td>Rp.30.000.000</td>
+                  <td>{{ $value->nama_pro }}</td>
+                  <td>{{ $value->jumlah }}</td>
+                  <td>{{ $value->harga }}</td>
+                  <td>{{ $value->subtotal }}</td>
                   </tr>
-                  <tr>
-                    <td>Stetoscope</td>
-                    <td>50</td>
-                    <td>Rp1.000.000</td>
-                    <td>Rp.50.000.000</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Total :</td>
-                    <td>Rp.80.000.000</td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
@@ -72,12 +61,26 @@
     </section>
           <!-- /.box -->
 <script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><i class="fa fa-eye"></i> Detail Transaksi</h4>
+      </div>
+      <div class="panel-body">
+        <div class="row">
           
-<script>
-  $(document).ready(function(){
-    $('#myTable').DataTable();
-});
-</script>
-
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>  
 @stop
-
+@section('css')
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+@stop
+@section('js')
+    <script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
+    <script>
+      $(document).ready(function(){
+        $('#myTable').DataTable();
+    });
+    </script>
+@stop

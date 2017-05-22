@@ -8,7 +8,7 @@ class Quotation extends Model
 {
 	protected $table = 'data_quotation';
 
-	public $timestamps = false;
+	// public $timestamps = false;
 
     protected $fillable = [
         'id_quo', 'total', 'created_at',

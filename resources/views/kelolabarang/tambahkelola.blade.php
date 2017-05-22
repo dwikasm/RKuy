@@ -25,7 +25,6 @@
                   <input type="text" class="form-control" name="stok" id="stok" placeholder="Stok produk..">
                 </div>
               </div>
-
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Tambah</button>
               </div>
