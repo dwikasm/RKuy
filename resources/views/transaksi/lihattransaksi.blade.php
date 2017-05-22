@@ -17,22 +17,22 @@
               <table id="myTable" class="table table-bordered table-condensed table-hover">
                 <thead>
                   <tr>
-                    <th>Tanggal Dibuat</th>
                     <th>ID Transaksi</th>
                     <th>ID Quotation</th>
                     <th>Customer</th>
                     <th>Alamat</th>
+                    <th>Tanggal Dibuat</th>
                     <th>Detail</th>
                   </tr>
                 </thead>
                 <tbody>
                 @foreach($transaksis as $key => $value)
                   <tr>
-                    <td>{{ $value->created_at }}</td>
                     <td>{{ $value->id_tr }}</td>
                     <td>{{ $value->id_quo }}</td>
                     <td>{{ $value->customer }}</td>
                     <td>{{ $value->alamat }}</td>
+                    <td>{{ $value->created_at }}</td>
                     <td><a href="{{Url('/transaksi/detail')}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
                   </tr>
                   @endforeach
