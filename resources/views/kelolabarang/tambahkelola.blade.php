@@ -5,39 +5,32 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-			<h3>Tambah Quotation</h3>
+			<h3>Tambah Barang</h3>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<form action="#" method="post">
+						<form action="{{Url('kelolabarang/tambahmethod')}}" method="post">
  							{{csrf_field()}}
- 							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
+ 							<div class="form-group">
  								<label>Nama Barang</label>
- 								<input type="text" name="customer" class="form-control" placeholder="Nama Barang">
- 								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
+ 								<input type="text" name="nama_pro" class="form-control" placeholder="Nama Barang">
  							</div>
  							<label>Jumlah Barang</label>
  								<div class="input-group">
 								      <span class="input-group-btn">
-								          <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+								          <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="stok">
 								              <span class="glyphicon glyphicon-minus"></span>
 								          </button>
 								      </span>
-								      <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="1000">
+								      <input type="text" name="stok" class="form-control input-number" value="1" min="1" max="1000">
 								      <span class="input-group-btn">
-								          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+								          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="stok">
 								              <span class="glyphicon glyphicon-plus"></span>
 								          </button>
 								      </span>
 								</div>
- 							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
- 								<label>Harga Beli</label>
- 								<input type="text" name="customer" class="form-control" placeholder="Harga Beli">
- 								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
- 							</div>
- 							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
+ 							<div class="form-group">
  								<label>Harga Jual</label>
- 								<input type="text" name="customer" class="form-control" placeholder="Harga Jual">
- 								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
+ 								<input type="text" name="harga" class="form-control" placeholder="Harga Jual">
  							</div>
  							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
  								<input type="submit" class="btn btn-primary" name="submit" value="Submit" >

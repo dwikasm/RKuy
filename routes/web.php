@@ -32,8 +32,8 @@ Route::get('/quotation/cetak', 'QuotationController@cetak');
 Route::get('/quotation/tambah', 'QuotationController@tambah');
 //Kelola Barang
 Route::get('/kelolabarang', 'KelolaController@lihat');
-Route::get('/kelolabarang/tambah', 'KelolaController@tambah');
-Route::get('/kelolabarang/test', 'KelolaController@test');
+Route::get('/kelolabarang/tambah', 'KelolaController@tambahPage');
+Route::post('/kelolabarang/tambahmethod', 'KelolaController@tambah');
 //Laporan Keuangan
 Route::get('/laporankeuangan', 'LaporanController@laporan');
 
