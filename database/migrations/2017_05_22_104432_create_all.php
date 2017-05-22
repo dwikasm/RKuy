@@ -24,11 +24,11 @@ class CreateAll extends Migration
             $table->unsignedInteger('id_quo');
             $table->string('customer');
             $table->text('alamat');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         }); 
         Schema::create('data_quotation', function (Blueprint $table) {
             $table->increments('id_quo');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });  
         Schema::create('data_quotation_produk', function (Blueprint $table) {
             $table->increments('id_quo_pro');
@@ -40,12 +40,12 @@ class CreateAll extends Migration
         Schema::create('deliveryorder', function (Blueprint $table) {
             $table->increments('id_deli');
             $table->unsignedInteger('id_tr');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });
         Schema::create('proofofitemreceipt', function (Blueprint $table) {
             $table->increments('id_proof');
             $table->unsignedInteger('id_tr');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });
         Schema::table('data_transaksi', function (Blueprint $table) {
             $table->foreign('id_quo')->references('id_quo')->on('data_quotation')->onDelete('cascade');;

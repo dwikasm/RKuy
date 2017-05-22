@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Produk;
 
 class KelolaController extends Controller
@@ -14,16 +13,19 @@ class KelolaController extends Controller
         $produks = Produk::all();
         return view('/kelolabarang/lihatkelola', compact('produks'));
     }
+    public function tambahPage(){
+        return view('/kelolabarang/tambahkelola');
+    }
     public function tambah(Request $request)
     {
-        $mk = new matkul();
-        $mk->nama = $request->nama;
-        $mk->sks = $request->sks;
-        $mk->semester = $request->semester;
-        $mk->jurusan = "Teknik Informatika";
-        $mk->save();
-        return redirect()->route('matkul.index')->with('alert-success','Data Berhasi Disimpan');
-    	return view('/kelolabarang/tambahkelola');
+        $Prod = new Produk();
+        $Prod->nama_pro = $request->nama_pro;
+        $Prod->harga = $request->harga;
+        $Prod->stok = $request->stok;
+        $Prod->save();
+
+        return redirect()->route('/kelolabarang/lihatkelola')->with('alert-success','Data Berhasil Disimpan');
+    	
     }
     public function test()
     {

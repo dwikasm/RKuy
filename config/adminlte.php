@@ -135,12 +135,12 @@ return [
             'icon' => 'lock',
             'url'  => '/kelolabarang',
         ],
-        [
-            'text' => 'Laporan Keuangan',
-            'url'  => 'admin/settings',
-            'icon' => 'share',
-            'url'  => '/laporankeuangan',
-        ],
+        // [
+        //     'text' => 'Laporan Keuangan',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'share',
+        //     'url'  => '/laporankeuangan',
+        // ],
         // [
         //     'text'    => 'Kelola Barang',
         //     'icon'    => 'share',
