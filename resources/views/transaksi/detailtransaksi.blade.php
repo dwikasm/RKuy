@@ -35,7 +35,6 @@
             <div class="box-body">
               <table id="myTable" class="table table-bordered table-hover">
                 <thead>
-                  @foreach($tra)
                   <tr>
                     <th>Nama Barang</th>
                     <th>Jumlah</th>
