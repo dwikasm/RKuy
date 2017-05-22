@@ -117,7 +117,7 @@ return [
         [
             'text'        => 'Transaksi',
             'url'         => 'admin/pages',
-            'icon'        => 'file',
+            'icon'        => 'bank',
             'url'         => '/transaksi',
             // 'label'       => 4,
             // 'label_color' => 'success',
@@ -126,7 +126,7 @@ return [
         [
             'text' => 'Quotation',
             'url'  => 'admin/settings',
-            'icon' => 'user',
+            'icon' => 'list',
             'url'  => '/quotation',
         ],
         [

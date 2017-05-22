@@ -4,7 +4,7 @@
 @section('content')
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4><i class="fa fa-home"></i> Tabel Transaksi</h4>
+        <h4><i class="fa fa-bank"></i> List Transaksi</h4>
       </div>
       <div class="panel-body">
         <div class=row>
@@ -17,8 +17,8 @@
               <table id="myTable" class="table table-bordered table-condensed table-hover">
                 <thead>
                   <tr>
-                    <th>ID Transaksi</th>
-                    <th>ID Quotation</th>
+                    <th width="80">ID Transaksi</th>
+                    <th width="80">ID Quotation</th>
                     <th>Customer</th>
                     <th>Alamat</th>
                     <th>Tanggal Dibuat</th>
@@ -28,8 +28,8 @@
                 <tbody>
                 @foreach($transaksis as $key => $value)
                   <tr>
-                    <td>{{ $value->id_tr }}</td>
-                    <td>{{ $value->id_quo }}</td>
+                    <td class="text-center">{{ $value->id_tr }}</td>
+                    <td class="text-center">{{ $value->id_quo }}</td>
                     <td>{{ $value->customer }}</td>
                     <td>{{ $value->alamat }}</td>
                     <td>{{ $value->created_at }}</td>

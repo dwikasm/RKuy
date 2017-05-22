@@ -4,7 +4,7 @@
 @section('content')
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4><i class="fa fa-home"></i> Tabel Quotation</h4>
+        <h4><i class="fa fa-list"></i> List Quotation</h4>
       </div>
       <div class="panel-body">
         <div class=row>
@@ -17,7 +17,7 @@
               <table id="myTable" class="table table-bordered table-condensed table-hover">
                 <thead>
                   <tr>
-                    <th>ID Quotation</th>
+                    <th width="80">ID Quotation</th>
                     <th>Tanggal Dibuat</th>
                     <th>Total Harga</th>
                     <th>Detail</th>
@@ -26,7 +26,7 @@
                 <tbody>
                 @foreach($quotations as $key => $value)
                   <tr>
-                    <td>{{ $value->id_quo }}</td>
+                    <td class="text-center">{{ $value->id_quo }}</td>
                     <td>{{ $value->created_at }}</td>
                     <td>Total harganya ...</td>
                     <td><a href="{{Url('/quotation/detail')}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
