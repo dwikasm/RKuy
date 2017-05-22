@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('title', 'SI PT Maju Jaya')
-@section('content_header')<h1>Buat Delivery Order</h1>@stop
+@section('content_header')@stop
 @section('content')
 <body onload="window.print();">
   <div class="row">
