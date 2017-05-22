@@ -24,4 +24,10 @@ class TransaksiController extends Controller
     {
         return view('/transaksi/deliveryorder');
     }
+    public function paymentreceipt(){
+        return view('/transaksi/paymentreceipt');
+    }
+    public function proofofitemreceipt(){
+        return view('/transaksi/proofofitemreceipt');
+    }
 }
