@@ -30,6 +30,7 @@ Route::get('/transaksi/proofofitemreceipt', 'TransaksiController@proofofitemrece
 Route::get('/quotation', 'QuotationController@lihat');
 Route::get('/quotation/cetak', 'QuotationController@cetak');
 Route::get('/quotation/tambah', 'QuotationController@tambah');
+Route::get('/quotation/detail/{id}', 'QuotationController@detail');
 //Kelola Barang
 Route::get('/kelolabarang', 'KelolaController@lihat');
 Route::get('/kelolabarang/tambah', 'KelolaController@tambah');
