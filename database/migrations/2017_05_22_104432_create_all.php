@@ -28,6 +28,8 @@ class CreateAll extends Migration
         }); 
         Schema::create('data_quotation', function (Blueprint $table) {
             $table->increments('id_quo');
+            $table->string('nama_quo');
+            $table->integer('total');
             $table->timestamps();
         });  
         Schema::create('data_quotation_produk', function (Blueprint $table) {
