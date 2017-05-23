@@ -119,17 +119,25 @@
               <!-- <p class="lead">Tanggal 22 April 2017</p> -->
               <div class="table-responsive">
                 <table class="table">
-                  <tr>
+                  <!-- <tr>
                     <th style="width:50%">Subtotal:</th>
                     <td>Rp. 1.900.000,00</td>
                   </tr>
                   <tr>
                     <th>Tax (5%)</th>
                     <td>Rp. 95.000,00</td>
-                  </tr>
+                  </tr> -->
                   <tr>
-                    <th>Total:</th>
-                    <td>Rp. 1.995.000,00</td>
+                    @foreach($total as $key => $value)
+                      @if($loop->first)
+                        <th>Total:</th>
+                        <td>Rp. {{$value->total}}</td>
+                      @else
+                        @break
+                      @endif
+                    @endforeach
+                    <!-- <th>Total:</th>
+                    <td>Rp. 1.995.000,00</td> -->
                   </tr>
                 </table>
               </div>
