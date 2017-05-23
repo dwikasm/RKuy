@@ -36,6 +36,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($results as $key => $value)
+                  <tr>
+                    <td>{{ $value->nama_pro }}</td>
+                    <td>{{ $value->jumlah }}</td>
+                    <td>{{ $value->harga }}</td>
+                    <td>{{ $value->subtotal }}</td>
+                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
