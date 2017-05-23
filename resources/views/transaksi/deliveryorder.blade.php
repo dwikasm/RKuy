@@ -48,7 +48,7 @@
               @foreach($results as $key => $value)
                 @if($loop->first)
                   <b>Order #</b> <br>{{$value->id_tr}}<br>
-                  <b>Tanggal</b> <br>{{$value->created_at}}<br>
+                  <b>Tanggal dibuat</b> <br>{{$value->created_at}}<br>
                 @else
                   @break
                 @endif
@@ -67,10 +67,10 @@
                 <thead>
                 <tr>
                   <th width="80">Produk #</th>
-                  <th>Produk</th>
-                  <th>Harga Satuan</th>
+                  <th>Nama Produk</th>
+                  <!-- <th width="110">Harga Satuan</th> -->
                   <th width="80">Jumlah</th>
-                  <th width="100">Subtotal</th>
+                  <!-- <th width="100">Subtotal</th> -->
                   <th class="text-center" width="50"><i class="fa fa-check"></i></th>
                 </tr>
                 </thead>
@@ -79,14 +79,14 @@
                   <tr>
                     <td class="text-center">{{ $value->id_pro }}</td>
                     <td>{{ $value->nama_pro }}</td>
-                    <td>{{ $value->harga}}</td>
+                    <!-- <td>{{ $value->harga}}</td> -->
                     <td class="text-center">{{ $value->jumlah }}</td>
-                    <td>{{ $value->subtotal }}</td>
+                    <!-- <td>{{ $value->subtotal }}</td> -->
                     <td></td>
                   </tr>
                   @endforeach
                 </tbody>
-                <tfoot>
+                <!-- <tfoot>
                   <tr>
                     <th></th>
                     <th></th>
@@ -101,7 +101,7 @@
                     @endforeach
                     <th></th>
                   </tr>
-                </tfoot>
+                </tfoot> -->
               </table>
             </div>
             <!-- /.col -->
@@ -110,7 +110,7 @@
           
           <!-- /.row -->
           <div class="row">
-            <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-8 text-center">
+            <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-9 text-center">
               @foreach($tanggaldibuat as $key => $value)
                 @if($loop->first)
                   <p>Tanggal {{$value->waktu_sekarang}}</p>
@@ -120,9 +120,9 @@
               @endforeach
             </div>
             <div class="clearfix" style="height: 8rem"></div>
-            <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-8 text-center" >
+            <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-9 text-center" >
               <span style="width:15rem;border-bottom:0.1em solid #000;display:inline-block;"></span><br>
-              <strong>Penerima</strong>
+              <strong>Petugas</strong>
             </div>
           </div>
           <div class="row no-print">
