@@ -2,7 +2,7 @@
 @section('title', 'SI PT Maju Jaya')
 @section('content_header')@stop
 @section('content')
-<body onload="window.print();">
+<body">
   <div class="row">
     <div class="col-md-12">      
       <div class="panel panel-default">
@@ -10,6 +10,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2>Delivery Order</h2>
+              <a href="javascript:window.print()"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-print"></i> CETAK</button></a>
             </div>
           </div>
           <br>
