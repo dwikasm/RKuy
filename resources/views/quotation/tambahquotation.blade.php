@@ -3,98 +3,86 @@
 @section('content_header')@stop
 @section('content')
 <div class="container">
-	<div class="row">
-		<div class="col-md-8">
-			<h3>Tambah Quotation</h3>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<form action="#" method="post">
- 							{{csrf_field()}}
- 							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
- 								<input type="text" name="customer" class="form-control" placeholder="Customer">
- 								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
- 							</div>
- 							<div id="divTambahBarang" class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
- 								<div class="form-group col-md-4">
-	 								<label for="sel1">Pilih Barang</label>
-							          <select class="form-control" id="sel1">
-							            <option>Kursi Roda</option>
-							            <option>Kasur RS</option>
-							            <option>Stetoscope</option>
-							          </select>
-						        </div>
-						        <div class="form-group col-md-2">
-						        	<label>Jumlah</label>
-	 								<input type="text" name="alamat" class="form-control" placeholder="1">
- 									{!! $errors->first('alamat', '<p class="help-block">:message</p>') !!}
-						        </div>
-						        <div class="form-group col-md-2">
-						        	<label>Tambahkan</label>
-	 								<button id="buttonTambah" type="button" class="btn btn-default"">tambah</button>
-						        </div>
- 							</div>
-						</form>
-					</div>
-				</div>
-		</div>
-		<div class="col-md-4">
-		<h3>Quotation</h3> 
-			<div class="panel panel-default">
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Nama Barang</th>
-								<th>Jumlah</th>
-								<th>Harga Satuan</th>
-								<th>Total Harga</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Kursi Roda</td>
-								<td>5</td>
-								<td>Rp6.000.000</td>
-								<td>Rp.30.000.000</td>
-							</tr>
-							<tr>
-								<td>Stetoscope</td>
-								<td>10</td>
-								<td>Rp1.000.000</td>
-								<td>Rp.10.000.000</td>
-							</tr>
-							<tr>
-								<td>Kasur RS</td>
-								<td>23</td>
-								<td>Rp1.500.000</td>
-								<td>Rp.36.000.000</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td>Total :</td>
-								<td>Rp.76.000.000</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td><button type="button" class="btn btn-primary">Submit</button></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Tambah Quotation</h3>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form action="/quotation/tambahproduk" method="post">
+              {{csrf_field()}}
+              
+              <div id="divTambahBarang" class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
+                <div class="form-group col-md-4">
+                  <label for="sel1">Pilih Barang</label>
+                    <select class="form-control" id="produks" name="produk">
+                      @foreach ($produks as $produk)
+                        <option value="{{$produk->id_pro}}">{{$produk->nama_pro}}</option>
+                      @endforeach
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label>Jumlah</label>
+                  <input type="text" name="jumlah" class="form-control" value="1">
+                  {!! $errors->first('alamat', '<p class="help-block">:message</p>') !!}
+                </div>
+                <div class="form-group col-md-2">
+                  <label>Tambahkan</label>
+                  <button id="buttonTambah" type="submit" class="btn btn-default"">tambah</button>
+                </div>
+              </div>
+            </form>
+
+            <form action="/quotation/submitproduk" method="post">
+              {{csrf_field()}}
+              <div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
+                <input type="text" name="customer" class="form-control" placeholder="Customer" required="true">
+                {!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
+              </div>
+              <h3>Total</h3>
+              <h4>{{ $total }}</h4>
+              <table id="table" class="table table-bordered table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th>Nama Barang</th>
+                    <th>Jumlah Barang</th>
+                    <th>Harga Satuan</th>
+                    <th>Total Harga</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($order as $key => $produk)
+                    <tr>
+                      <td>{{ $produk->nama_pro }}</td>
+                      <td>{{ $produk->jumlah }}</td>
+                      <td>{{ $produk->harga }}</td>
+                      <td>{{ $produk->subtotal }}</td>
+                    </tr>
+                  @endforeach
+                </tbody>
+              </table>
+              <div class="text-center">
+                <button type="submit" class="btn btn-default btn-sm">Selesai</button>
+              </div>
+            </form>
+            <form action="/quotation/cancelproduk" method="POST">
+              {{csrf_field()}}
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-sm">Batal</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    
+  </div>
 </div>
 
 <!-- <script type="text/javascript">
-	$(document).ready(function(){
-		$("#buttonTambah").click(function(){
-			$('#divTambahBarang').clone().appendTo('#forAppend');
-		})
-	})
+  $(document).ready(function(){
+    $("#buttonTambah").click(function(){
+      $('#divTambahBarang').clone().appendTo('#forAppend');
+    })
+  })
 </script> -->
 @stop
 

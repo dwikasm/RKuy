@@ -10,7 +10,7 @@ class Quotation extends Model
 
 	// public $timestamps = false;
 
-    protected $fillable = [
-        'id_quo', 'total', 'created_at',
-    ];
+    // protected $fillable = [
+    //     'id_quo', 'total', 'created_at',
+    // ];
 }
