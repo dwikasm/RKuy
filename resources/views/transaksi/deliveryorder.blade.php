@@ -2,18 +2,15 @@
 @section('title', 'SI PT Maju Jaya')
 @section('content_header')@stop
 @section('content')
-<body">
+<body>
   <div class="row">
-    <div class="col-md-12">      
+    <div class="col-md-12">
       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-truck"></i> Delivery Order<h4>
+        </div>
+        <!-- /. panel-heading -->
         <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Delivery Order</h2>
-              <a href="javascript:window.print()"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-print"></i> CETAK</button></a>
-            </div>
-          </div>
-          <br>
           <!-- info row -->
           <div class="row invoice-info">
             <div class="col-sm-4 invoice-col">
@@ -26,7 +23,7 @@
                 Email: majujaya@maju.com
               </address>
             </div>
-            <!-- /.col -->
+            <!-- /.info pt maju jaya -->
             <div class="col-sm-4 invoice-col">
               Kepada
               <address>
@@ -45,14 +42,13 @@
                 Email: joko@westra.com-->
               </address>
             </div>
-            <!-- /.col -->
+            <!-- /.info customer -->
             <div class="col-sm-4 invoice-col">
               <!-- <b>Delivery Order #007612</b><br> -->
-              <br>
               @foreach($results as $key => $value)
                 @if($loop->first)
-                  <b>Order ID:</b> {{$value->id_tr}}<br>
-                  <b>Tanggal:</b> {{$value->created_at}}<br>
+                  <b>Order #</b> <br>{{$value->id_tr}}<br>
+                  <b>Tanggal</b> <br>{{$value->created_at}}<br>
                 @else
                   @break
                 @endif
@@ -60,56 +56,54 @@
               <!-- <b>Order ID:</b> 4F3S8J<br>
               <b>Tanggal:</b> 2/22/2014<br> -->
             </div>
-            <!-- /.col -->
+            <!-- /.info  -->
           </div>
           <!-- /.row -->
 
           <!-- Table row -->
           <div class="row">
-            <div class="col-xs-12 table-responsive">
-              <table class="table table-striped">
+            <div class="col-md-12 table-responsive">
+              <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                  <th>Jumlah</th>
+                  <th width="80">Produk #</th>
                   <th>Produk</th>
-                  <!-- <th>Deskripsi</th> -->
-                  <th>Subtotal</th>
+                  <th width="80">Jumlah</th>
+                  <th width="100">Subtotal</th>
                 </tr>
                 </thead>
                 <tbody>
-                <!-- <tr>
-                  <td>1</td>
-                  <td>Oxygen Checker</td>
-                  <td>Alat untuk memeriksa kadar oksigen di udara</td>
-                  <td>Rp. 1000.000,00</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>CO2 Checker</td>
-                  <td>Alat untuk memeriksa kadar co2 di udara</td>
-                  <td>Rp. 900.000,00</td>
-                </tr> -->
                 @foreach($results as $key => $value)
                   <tr>
-                    <td>{{ $value->jumlah }}</td>
+                    <td class="text-center">{{ $value->id_pro }}</td>
                     <td>{{ $value->nama_pro }}</td>
+                    <td class="text-center">{{ $value->jumlah }}</td>
                     <td>{{ $value->subtotal }}</td>
                   </tr>
                   @endforeach
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total</th>
+                    @foreach($total as $key => $value)
+                      @if($loop->first)
+                        <th>{{$value->total}}</th>
+                      @else
+                        @break
+                      @endif
+                    @endforeach
+                  </tr>
+                </tfoot>
               </table>
             </div>
             <!-- /.col -->
           </div>
           <!-- /.row -->
 
-          <div class="row">
-            <!-- accepted payments column -->
-            <div class="col-xs-6">
-              
-            </div>
-            <!-- /.col -->
-            <div class="col-xs-6">
+          <!-- <div class="row">
+            <div class="col-md-12 text-right">
               @foreach($tanggaldibuat as $key => $value)
                 @if($loop->first)
                   <p class="lead">Tanggal {{$value->waktu_sekarang}}</p>
@@ -117,41 +111,22 @@
                   @break
                 @endif
               @endforeach
-              <!-- <p class="lead">Tanggal 22 April 2017</p> -->
-              <div class="table-responsive">
-                <table class="table">
-                  <!-- <tr>
-                    <th style="width:50%">Subtotal:</th>
-                    <td>Rp. 1.900.000,00</td>
-                  </tr>
-                  <tr>
-                    <th>Tax (5%)</th>
-                    <td>Rp. 95.000,00</td>
-                  </tr> -->
-                  <tr>
-                    @foreach($total as $key => $value)
-                      @if($loop->first)
-                        <th>Total:</th>
-                        <td>Rp. {{$value->total}}</td>
-                      @else
-                        @break
-                      @endif
-                    @endforeach
-                    <!-- <th>Total:</th>
-                    <td>Rp. 1.995.000,00</td> -->
-                  </tr>
-                </table>
-              </div>
             </div>
-            <!-- /.col -->
           </div>
+           -->
           <!-- /.row -->
-
+          <div class="row no-print">
+            <div class="col-md-12 text-right">
+              <a href="javascript:window.print()"<button type="button" class="btn btn-default pull-left"/><i class="fa fa-print"></i> Cetak</button></a>
+            </div>
+          </div>
         </div>
         <!-- /. panel body -->
       </div>
+      <!-- /.panel -->
     </div>
-  
+    <!-- /.col -->
   </div>
+  <!-- /.row -->
 </body>
 @stop
