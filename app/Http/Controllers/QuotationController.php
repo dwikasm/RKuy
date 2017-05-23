@@ -79,6 +79,8 @@ class QuotationController extends Controller
         if ($request->session()->has('produks'))
         {
             $produks = $request->session()->get('produks');
+            $request->session()->put('produks', []);
+            $request->session()->put('total', 0);
             if (count($produks) > 0)
             {
                 $quotation = new Quotation();
