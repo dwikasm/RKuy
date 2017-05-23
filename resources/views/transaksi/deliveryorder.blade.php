@@ -29,19 +29,35 @@
             <div class="col-sm-4 invoice-col">
               Kepada
               <address>
-                <strong>Perusahaan Westra</strong><br>
+              @foreach($results as $key => $value)
+                @if($loop->first)
+                  <strong>{{$value->customer}}</strong><br>
+                  {{$value->alamat}}<br>
+                @else
+                  @break
+                @endif
+              @endforeach
+                <!-- <strong>Perusahaan Westra</strong><br>
                 Jalan Bumi 3 No.19 Kemanggisan<br>
                 Surabaya, 61120<br>
                 Phone: (555) 539-1037<br>
-                Email: joko@westra.com
+                Email: joko@westra.com-->
               </address>
             </div>
             <!-- /.col -->
             <div class="col-sm-4 invoice-col">
-              <b>Delivery Order #007612</b><br>
+              <!-- <b>Delivery Order #007612</b><br> -->
               <br>
-              <b>Order ID:</b> 4F3S8J<br>
-              <b>Tanggal:</b> 2/22/2014<br>
+              @foreach($results as $key => $value)
+                @if($loop->first)
+                  <b>Order ID:</b> {{$value->id_tr}}<br>
+                  <b>Tanggal:</b> {{$value->created_at}}<br>
+                @else
+                  @break
+                @endif
+              @endforeach
+              <!-- <b>Order ID:</b> 4F3S8J<br>
+              <b>Tanggal:</b> 2/22/2014<br> -->
             </div>
             <!-- /.col -->
           </div>
@@ -55,12 +71,12 @@
                 <tr>
                   <th>Jumlah</th>
                   <th>Produk</th>
-                  <th>Deskripsi</th>
+                  <!-- <th>Deskripsi</th> -->
                   <th>Subtotal</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <!-- <tr>
                   <td>1</td>
                   <td>Oxygen Checker</td>
                   <td>Alat untuk memeriksa kadar oksigen di udara</td>
@@ -71,7 +87,14 @@
                   <td>CO2 Checker</td>
                   <td>Alat untuk memeriksa kadar co2 di udara</td>
                   <td>Rp. 900.000,00</td>
-                </tr>
+                </tr> -->
+                @foreach($results as $key => $value)
+                  <tr>
+                    <td>{{ $value->jumlah }}</td>
+                    <td>{{ $value->nama_pro }}</td>
+                    <td>{{ $value->subtotal }}</td>
+                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
@@ -86,8 +109,14 @@
             </div>
             <!-- /.col -->
             <div class="col-xs-6">
-              <p class="lead">Tanggal 22 April 2017</p>
-
+              @foreach($tanggaldibuat as $key => $value)
+                @if($loop->first)
+                  <p class="lead">Tanggal {{$value->waktu_sekarang}}</p>
+                @else
+                  @break
+                @endif
+              @endforeach
+              <!-- <p class="lead">Tanggal 22 April 2017</p> -->
               <div class="table-responsive">
                 <table class="table">
                   <tr>
@@ -115,4 +144,5 @@
     </div>
   
   </div>
+</body>
 @stop

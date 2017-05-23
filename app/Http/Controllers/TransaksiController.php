@@ -36,8 +36,24 @@ class TransaksiController extends Controller
     }
     public function deliveryorder()
     {
-        // print($results);
-        return view('/transaksi/deliveryorder');
+        $results = DB::select("SELECT*
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = 1");
+        $tanggaldibuat = DB::select("SELECT CURDATE() as waktu_sekarang");
+        // $total = DB::select("SELECT SUM(subtotal) AS total
+        //     FROM
+        //     (SELECT subtotal
+        //     FROM data_quotation_produk
+        //     INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+        //     INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+        //     INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+        //     WHERE data_quotation_produk.id_quo = 1) AS gabungan")
+        //dd($results);
+        //dd($tanggaldibuat);
+        return view('/transaksi/deliveryorder', compact('results', 'tanggaldibuat'));
     }
     public function paymentreceipt(){
         return view('/transaksi/paymentreceipt');
