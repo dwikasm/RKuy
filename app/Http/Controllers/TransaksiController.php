@@ -34,15 +34,68 @@ class TransaksiController extends Controller
     {
         return view('/transaksi/tambahtransaksi');
     }
-    public function deliveryorder()
+    public function deliveryorder($id)
     {
-        // print($results);
-        return view('/transaksi/deliveryorder');
+        $results = DB::select("SELECT*
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = ".$id);
+        $tanggaldibuat = DB::select("SELECT CURDATE() as waktu_sekarang");
+        $total = DB::select("SELECT SUM(subtotal) AS total
+            FROM
+            (SELECT subtotal
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = ".$id.") AS gabungan");
+        //dd($results);
+        //dd($tanggaldibuat);
+        //dd($total);
+        return view('/transaksi/deliveryorder', compact('results', 'tanggaldibuat', 'total'));
     }
-    public function paymentreceipt(){
-        return view('/transaksi/paymentreceipt');
+    public function paymentreceipt($id){
+        $results = DB::select("SELECT*
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = ".$id);
+        $tanggaldibuat = DB::select("SELECT CURDATE() as waktu_sekarang");
+        $total = DB::select("SELECT SUM(subtotal) AS total
+            FROM
+            (SELECT subtotal
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = ".$id.") AS gabungan");
+        //dd($results);
+        //dd($tanggaldibuat);
+        //dd($total);
+        return view('/transaksi/paymentreceipt', compact('results', 'tanggaldibuat', 'total'));
     }
-    public function proofofitemreceipt(){
-        return view('/transaksi/proofofitemreceipt');
+    public function proofofitemreceipt($id){
+        $results = DB::select("SELECT*
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = ".$id);
+        $tanggaldibuat = DB::select("SELECT CURDATE() as waktu_sekarang");
+        $total = DB::select("SELECT SUM(subtotal) AS total
+            FROM
+            (SELECT subtotal
+            FROM data_quotation_produk
+            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
+            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
+            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
+            WHERE data_quotation_produk.id_quo = ".$id.") AS gabungan");
+        //dd($results);
+        //dd($tanggaldibuat);
+        //dd($total);
+        return view('/transaksi/proofofitemreceipt', compact('results', 'tanggaldibuat', 'total'));
     }
 }
