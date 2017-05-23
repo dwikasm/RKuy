@@ -10,8 +10,14 @@
 
         <div class=row>
           <div class="col-md-2">
-            <a href="{{Url('/transaksi/deliveryorder')}}" class="btn btn-primary btn-sm">
-             <i class="fa fa-plus-circle"></i> Buat Delivery Order</a>
+            @foreach($results as $key => $value)
+              @if($loop->first)
+                <a href="{{Url('/transaksi/deliveryorder/'.$value->id_quo)}}" class="btn btn-primary btn-sm">
+                <i class="fa fa-plus-circle"></i> Buat Delivery Order</a>
+              @else
+                @break
+              @endif
+            @endforeach
           </div>
           <div class="col-md-2">
             <a href="{{Url('/transaksi/paymentreceipt')}}" class="btn btn-primary btn-sm">

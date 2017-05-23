@@ -23,14 +23,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/transaksi', 'TransaksiController@lihat');
 Route::get('/transaksi/detail/{id}', 'TransaksiController@detail');
 Route::get('/transaksi/tambah', 'TransaksiController@tambah');
-Route::get('/transaksi/deliveryorder', 'TransaksiController@deliveryorder');
+Route::get('/transaksi/deliveryorder/{id}', 'TransaksiController@deliveryorder');
 Route::get('/transaksi/paymentreceipt', 'TransaksiController@paymentreceipt');
 Route::get('/transaksi/proofofitemreceipt', 'TransaksiController@proofofitemreceipt');
 //Quotation
 Route::get('/quotation', 'QuotationController@lihat');
 Route::get('/quotation/cetak', 'QuotationController@cetak');
 Route::get('/quotation/tambah', 'QuotationController@tambah');
-Route::get('/quotation/detail/{id}', 'QuotationController@detail');
 //Kelola Barang
 Route::get('/kelolabarang', 'KelolaController@lihat');
 Route::get('/kelolabarang/tambah', 'KelolaController@tambah');

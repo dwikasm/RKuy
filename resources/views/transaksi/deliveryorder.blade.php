@@ -68,6 +68,7 @@
                 <tr>
                   <th width="80">Produk #</th>
                   <th>Produk</th>
+                  <th>Harga Satuan</th>
                   <th width="80">Jumlah</th>
                   <th width="100">Subtotal</th>
                   <th class="text-center" width="50"><i class="fa fa-check"></i></th>
@@ -78,6 +79,7 @@
                   <tr>
                     <td class="text-center">{{ $value->id_pro }}</td>
                     <td>{{ $value->nama_pro }}</td>
+                    <td>{{ $value->harga}}</td>
                     <td class="text-center">{{ $value->jumlah }}</td>
                     <td>{{ $value->subtotal }}</td>
                     <td></td>
@@ -86,6 +88,7 @@
                 </tbody>
                 <tfoot>
                   <tr>
+                    <th></th>
                     <th></th>
                     <th></th>
                     <th>Total</th>
