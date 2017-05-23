@@ -70,6 +70,7 @@
                   <th>Produk</th>
                   <th width="80">Jumlah</th>
                   <th width="100">Subtotal</th>
+                  <th class="text-center" width="50"><i class="fa fa-check"></i></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -79,6 +80,7 @@
                     <td>{{ $value->nama_pro }}</td>
                     <td class="text-center">{{ $value->jumlah }}</td>
                     <td>{{ $value->subtotal }}</td>
+                    <td></td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -94,6 +96,7 @@
                         @break
                       @endif
                     @endforeach
+                    <th></th>
                   </tr>
                 </tfoot>
               </table>
@@ -101,20 +104,24 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
-
-          <!-- <div class="row">
-            <div class="col-md-12 text-right">
+          
+          <!-- /.row -->
+          <div class="row">
+            <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-8 text-center">
               @foreach($tanggaldibuat as $key => $value)
                 @if($loop->first)
-                  <p class="lead">Tanggal {{$value->waktu_sekarang}}</p>
+                  <p>Tanggal {{$value->waktu_sekarang}}</p>
                 @else
                   @break
                 @endif
               @endforeach
             </div>
+            <div class="clearfix" style="height: 8rem"></div>
+            <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-8 text-center" >
+              <span style="width:15rem;border-bottom:0.1em solid #000;display:inline-block;"></span><br>
+              <strong>Penerima</strong>
+            </div>
           </div>
-           -->
-          <!-- /.row -->
           <div class="row no-print">
             <div class="col-md-12 text-right">
               <a href="javascript:window.print()"<button type="button" class="btn btn-default pull-left"/><i class="fa fa-print"></i> Cetak</button></a>
