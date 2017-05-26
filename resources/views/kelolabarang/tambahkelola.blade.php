@@ -2,52 +2,46 @@
 @section('title', 'SI Maju Jaya')
 @section('content_header')@stop
 @section('content')
-    <section class="content">
-      <div class="row">
-        <div class="col-md-4 ">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Tambah Produk</h3>
-            </div >
-                <form role="form" action="/kelolabarang/submittambah/" method="post">
-                {{ csrf_field() }}
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="nama_pro">Nama</label>
-                      <input type="text" class="form-control"  name="nama_pro" id="nama_pro" placeholder="Nama produk">
-                    </div>
-                    <div class="form-group">
-                      <label for="harga">Harga</label>
-                      <input type="text" class="form-control" name="harga" id="harga" placeholder="Harga produk..">
-                    </div>
-                    <div class="form-group">
-                      <label for="stok">Stok</label>
-                      <div class="input-group">
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="stok">
-                              <span class="glyphicon glyphicon-minus"></span>
-                            </button>
-                          </span>
-                          <input type="text" name="stok" class="form-control input-number" name="stok" id="stok" value="1" min="1" max="1000">
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="stok">
-                              <span class="glyphicon glyphicon-plus"></span>
-                            </button>
-                          </span>
-                      </div>
-                      <!-- <input type="text" class="form-control" name="stok" id="stok" placeholder="Stok produk.."> -->
-                    </div>
-                  </div>
-                  <div class="box-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Tambah</button>
-                  </div>
-                </form>
+    <div class="row">
+      <div class="col-md-4 ">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><i class="fa fa-plus-circle"></i> Tambah Produk</h4>
+          </div >
+          <form role="form" action="/kelolabarang/submittambah/" method="post">
+          {{ csrf_field() }}
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="nama_pro">Nama</label>
+              <input type="text" class="form-control"  name="nama_pro" id="nama_pro" placeholder="Nama produk">
             </div>
-        </div>
-        <!-- /.col -->
+            <div class="form-group">
+              <label for="harga">Harga</label>
+              <input type="text" class="form-control" name="harga" id="harga" placeholder="Harga produk..">
+            </div>
+            <div class="form-group">
+              <label for="stok">Stok</label>
+              <div class="input-group">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="stok">
+                      <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                  </span>
+                  <input type="text" name="stok" class="form-control input-number" name="stok" id="stok" value="1" min="1" max="1000">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="stok">
+                      <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                  </span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right">Tambah</button>
+          </form>
+          </div>
       </div>
-      <!-- /.row -->
-    </section>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
 
 @stop
 @section('js')

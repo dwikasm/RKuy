@@ -9,7 +9,7 @@
       <div class="panel-body">
         <div class=row>
           <div class="col-md-12" style="padding-bottom: 1.5rem">
-            <a href="{{Url('quotation/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Quotation</a>
+            <a href="{{Url('quotation/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Quotation Baru</a>
           </div>
           <!-- /.col-md-12 -->
           <div class="col-md-12">                                                                                      
@@ -18,9 +18,9 @@
                 <thead>
                   <tr>
                     <th width="80">ID Quotation</th>
-                    <th>Waktu</th>
-                    <th>Nama</th>
-                    <th>Total</th>
+                    <th>Nama Quotation</th>
+                    <th>Total Harga</th>
+                    <th>Waktu Pembuatan</th>
                     <th width="80">Opsi</th>
                   </tr>
                 </thead>
@@ -28,9 +28,9 @@
                   @foreach($quotations as $key => $value)
               <tr>
                 <td class="text-center">{{ $value->id_quo }}</td>
-                <td>{{ $value->created_at }}</td>
                 <td>{{ $value->nama_quo }}</td>
                 <td>{{ $value->total }}</td>
+                <td>{{ $value->created_at }}</td>
                 <td><a href="{{Url('/quotation/detail/'.$value->id_quo)}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
               </tr>
               @endforeach

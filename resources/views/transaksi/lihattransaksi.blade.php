@@ -9,7 +9,7 @@
       <div class="panel-body">
         <div class=row>
           <div class="col-md-12" style="padding-bottom: 1.5rem">
-            <a href="{{Url('/transaksi/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Transaksi</a>
+            <a href="{{Url('/transaksi/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Transaksi Baru</a>
           </div>
           <!-- /.col-md-12 -->
           <div class="col-md-12">
@@ -21,7 +21,7 @@
                     <th width="80">ID Quotation</th>
                     <th>Customer</th>
                     <th>Alamat</th>
-                    <th>Tanggal Dibuat</th>
+                    <th>Waktu Pembuatan</th>
                     <th>Detail</th>
                   </tr>
                 </thead>

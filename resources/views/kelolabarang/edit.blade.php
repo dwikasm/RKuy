@@ -2,51 +2,46 @@
 @section('title', 'SI Maju Jaya')
 @section('content_header')@stop
 @section('content')
-<section class="content">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Edit Produk</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><i class="fa fa-edit"></i> Edit Data Produk</h4>
+          </div>
+          <form role="form" action="/kelolabarang/submitedit/{{$produk->id_pro}}" method="post">
+          {{ csrf_field() }}
+            <div class="panel-body">
+              <div class="form-group">
+                <label for="nama_pro">Nama</label>
+                <input type="text" class="form-control"  name="nama_pro" id="nama_pro" value="{{$produk->nama_pro}}">
+              </div>
+              <div class="form-group">
+                <label for="harga">Harga</label>
+                <input type="text" class="form-control" name="harga" id="harga" value="{{$produk->harga}}">
+              </div>
+              <div class="form-group">
+                <label for="stok">Stok</label>
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="stok">
+                      <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                  </span>
+                  <input type="text" name="stok" class="form-control input-number" name="stok" id="stok" value="{{$produk->stok}}" min="1" max="1000">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="stok">
+                      <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                  </span>
+                </div>
+                <!-- <input type="text" class="form-control" name="stok" id="stok" value="{{$produk->stok}}"> -->
+              </div>
+              <button type="submit" class="btn btn-primary pull-right">Edit</button>
+            </div>
+          </form>
         </div>
-		    <form role="form" action="/kelolabarang/submitedit/{{$produk->id_pro}}" method="post">
-		    {{ csrf_field() }}
-		      <div class="box-body">
-		        <div class="form-group">
-		          <label for="nama_pro">Nama</label>
-		          <input type="text" class="form-control"  name="nama_pro" id="nama_pro" value="{{$produk->nama_pro}}">
-		        </div>
-		        <div class="form-group">
-		          <label for="harga">Harga</label>
-		          <input type="text" class="form-control" name="harga" id="harga" value="{{$produk->harga}}">
-		        </div>
-		        <div class="form-group">
-		          <label for="stok">Stok</label>
-		          <div class="input-group">
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="stok">
-                          <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                      </span>
-                      <input type="text" name="stok" class="form-control input-number" name="stok" id="stok" value="{{$produk->stok}}" min="1" max="1000">
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="stok">
-                          <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                      </span>
-                  </div>
-		          <!-- <input type="text" class="form-control" name="stok" id="stok" value="{{$produk->stok}}"> -->
-		        </div>
-		      </div>
-
-		      <div class="box-footer">
-		        <button type="submit" class="btn btn-primary pull-right">Edit</button>
-		      </div>
-		    </form>
-	    </div>
+      </div>
     </div>
-  </div>
-</section>
 @stop
 @section('js')
     <script type="text/javascript">
