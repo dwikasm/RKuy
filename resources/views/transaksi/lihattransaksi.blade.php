@@ -33,7 +33,7 @@
                     <td>{{ $value->customer }}</td>
                     <td>{{ $value->alamat }}</td>
                     <td>{{ $value->created_at }}</td>
-                    <td><a href="{{Url('/transaksi/detail/'.$value->id_quo)}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
+                    <td><a href="{{Url('/transaksi/detail/'.$value->id_tr)}}"<button type="button" class="btn btn-default btn-sm"/><i class="fa fa-eye"></i> Lihat</button></a></td>
                   </tr>
                   @endforeach
                 </tbody>

@@ -17,13 +17,13 @@ class DataQuotationTableSeeder extends Seeder
 
         $data = new Quotation();
         $data->nama_quo = 'Peralatan Pak Rido';
-        $data->total = 121000;
+        $data->total = 74000;
         $data->id_quo = 1;
         $data->save();
 
         $data = new Quotation();
         $data->nama_quo = 'Apotek Surabaya';
-        $data->total = 652000;
+        $data->total = 66000;
         $data->id_quo = 2;
         $data->save();
 	}
