@@ -16,7 +16,7 @@
                     <th>Nama Barang</th>
                     <th>Jumlah Barang</th>
                     <th>Harga Satuan</th>
-                    <th>Total Harga</th>
+                    <th>Subtotal Harga</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -29,6 +29,16 @@
                   </tr>
                   @endforeach
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total</th>
+                    @foreach($total as $key => $tota)
+                    <th>{{ $tota->total }}</th>
+                    @endforeach
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </div>
