@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'menu1' => [
+    'menu' => [
         [
             'text' => 'Transaksi',
             'url'  => 'admin/pages',
