@@ -54,10 +54,22 @@ class TransaksiController extends Controller
         $transaksi->id_quo = $request->input('idquo');
         $transaksi->customer = $request->input('customer');
         $transaksi->alamat = $request->input('alamat');
+        echo ($transaksi->id_tr);
         $transaksi->save();
+        //dd($transaksi);
         
-        $transaksis = Transaksi::all();
-        return view('transaksi.lihattransaksi', compact('transaksis'));
+        $trans = DB::select("   SELECT *
+                                FROM data_transaksi
+                                WHERE data_transaksi.id_tr = ".$transaksi->id);
+        $quo = DB::select("SELECT* FROM data_quotation WHERE data_quotation.id_quo = ".$transaksi->id_quo);
+        $results = DB::select("SELECT* 
+                FROM produk
+                INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
+                WHERE data_quotation_produk.id_quo = ".$transaksi->id_quo);
+        // dd($trans);
+        // dd($results);
+        // dd($quo);
+        return view('/transaksi/detailtransaksi', compact('trans','results', 'quo'));
     }
     public function deliveryorder($id)
     {

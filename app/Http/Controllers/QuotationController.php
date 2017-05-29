@@ -114,6 +114,16 @@ class QuotationController extends Controller
                 }
             }
         }
-        return redirect('/quotation');
+        // return redirect('/quotation');
+        $results = DB::select("SELECT* 
+                FROM produk
+                INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
+                WHERE data_quotation_produk.id_quo = ".$quotation->id);
+        $quo = DB::select("SELECT * 
+                            FROM data_quotation
+                            WHERE data_quotation.id_quo = ".$quotation->id);
+        // dd($results);
+        // dd($quo);
+        return view('/quotation/detailquotation', compact('results','quo'));
     }
 }
