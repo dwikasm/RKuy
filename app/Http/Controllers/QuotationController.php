@@ -32,12 +32,12 @@ class QuotationController extends Controller
                 FROM produk
                 INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
                 WHERE data_quotation_produk.id_quo = ".$id);
-        $total = DB::select("SELECT * 
+        $quo = DB::select("SELECT * 
                             FROM data_quotation
                             WHERE data_quotation.id_quo = ".$id);
         // dd($results);
-        // dd($total);
-        return view('/quotation/detailquotation', compact('results','total'));
+        // dd($quo);
+        return view('/quotation/detailquotation', compact('results','quo'));
     }
 
     public function tambahproduk(Request $request)
