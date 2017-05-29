@@ -7,6 +7,7 @@ use App\DataTransaksi;
 use App\Transaksi;
 use App\DataQuotationProduk;
 use App\Produk;
+use App\Quotation;
 use DB;
 
 
@@ -30,27 +31,25 @@ class TransaksiController extends Controller
                 WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo);
         // dd($trans);
         // dd($results);
+        // dd($quo);
         return view('/transaksi/detailtransaksi', compact('trans','results', 'quo'));
 
     }
     public function tambah()
     {
-        $query = DB::select("SELECT id_quo
-            FROM data_quotation");
-        return view('/transaksi/tambahtransaksi', compact('query'));
+        $quotations = Quotation::all();
+        return view('/transaksi/tambahtransaksi', compact('quotations'));
     }
     public function submit_data(Request $request)
     {
-        $idquo = DB::select("SELECT id_quo
-            FROM data_quotation
-            where nama_quo = '".$request->input('namaquo')."'");
-        //dd ($idquo);
+        // dd($request);
+
         $transaksi = new Transaksi();
-        //$transaksi->id_quo = $request->input('idquo');
-        $transaksi->id_quo = $idquo[0]->id_quo;
+        $transaksi->id_quo = $request->input('idquo');
         $transaksi->customer = $request->input('customer');
         $transaksi->alamat = $request->input('alamat');
         $transaksi->save();
+        
         $transaksis = Transaksi::all();
         return view('transaksi.lihattransaksi', compact('transaksis'));
     }

@@ -27,5 +27,12 @@ class DataQuotationProdukTableSeeder extends Seeder
         $data->jumlah = 3;
         $data->subtotal = 30000;
         $data->save();
+
+        $data = new DataQuotationProduk();
+        $data->id_quo = 2;
+        $data->id_pro = 1;
+        $data->jumlah = 3;
+        $data->subtotal = 66000;
+        $data->save();
     }
 }
