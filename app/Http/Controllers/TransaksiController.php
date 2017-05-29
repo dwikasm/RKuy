@@ -69,47 +69,31 @@ class TransaksiController extends Controller
         return view('/transaksi/deliveryorder', compact('trans','results', 'quo', 'tanggaldibuat'));
     }
     public function paymentreceipt($id){
-        $trans = DB::select("SELECT * FROM data_transaksi WHERE data_transaksi.id_tr = ".$id);
-        $results = DB::select("SELECT*
-            FROM data_quotation_produk
-            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
-            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
-            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
-            WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo);
+        $trans = DB::select("   SELECT *
+                                FROM data_transaksi
+                                WHERE data_transaksi.id_tr = ".$id);
+        $quo = DB::select("SELECT* FROM data_quotation WHERE data_quotation.id_quo = ".$trans[0]->id_quo);
+        $results = DB::select("SELECT* 
+                FROM produk
+                INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
+                WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo);
         $tanggaldibuat = DB::select("SELECT CURDATE() as waktu_sekarang");
-        $total = DB::select("SELECT SUM(subtotal) AS total
-            FROM
-            (SELECT subtotal
-            FROM data_quotation_produk
-            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
-            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
-            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
-            WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo.") AS gabungan");
-        //dd($results);
-        //dd($tanggaldibuat);
-        //dd($total);
-        return view('/transaksi/paymentreceipt', compact('results', 'tanggaldibuat', 'total'));
+        // dd($trans);
+        // dd($results);
+        return view('/transaksi/paymentreceipt', compact('trans','results', 'quo', 'tanggaldibuat'));
     }
     public function proofofitemreceipt($id){
-        $trans = DB::select("SELECT * FROM data_transaksi WHERE data_transaksi.id_tr = ".$id);
-        $results = DB::select("SELECT*
-            FROM data_quotation_produk
-            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
-            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
-            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
-            WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo);
+        $trans = DB::select("   SELECT *
+                                FROM data_transaksi
+                                WHERE data_transaksi.id_tr = ".$id);
+        $quo = DB::select("SELECT* FROM data_quotation WHERE data_quotation.id_quo = ".$trans[0]->id_quo);
+        $results = DB::select("SELECT* 
+                FROM produk
+                INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
+                WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo);
         $tanggaldibuat = DB::select("SELECT CURDATE() as waktu_sekarang");
-        $total = DB::select("SELECT SUM(subtotal) AS total
-            FROM
-            (SELECT subtotal
-            FROM data_quotation_produk
-            INNER JOIN produk ON produk.id_pro = data_quotation_produk.id_pro
-            INNER JOIN data_quotation ON data_quotation.id_quo = data_quotation_produk.id_quo
-            INNER JOIN data_transaksi ON data_transaksi.id_quo = data_quotation_produk.id_quo
-            WHERE data_quotation_produk.id_quo = ".$trans[0]->id_quo.") AS gabungan");
-        //dd($results);
-        //dd($tanggaldibuat);
-        //dd($total);
-        return view('/transaksi/proofofitemreceipt', compact('results', 'tanggaldibuat', 'total'));
+        // dd($trans);
+        // dd($results);
+        return view('/transaksi/proofofitemreceipt', compact('trans','results', 'quo', 'tanggaldibuat'));
     }
 }

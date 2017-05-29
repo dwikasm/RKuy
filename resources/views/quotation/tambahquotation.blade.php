@@ -74,7 +74,7 @@
                     </tfoot>
                   </table>
                   <div class="pull-right">
-                    <button type="submit" class="btn btn-default btn-sm">Selesai</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Selesai</button>
                   </div>
                 </form>
                 <!-- /. nama quotation -->

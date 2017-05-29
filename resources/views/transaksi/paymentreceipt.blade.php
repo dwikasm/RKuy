@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'SI PT Maju Jaya')
+@section('title', 'SI Maju Jaya')
 @section('content_header')@stop
 @section('content')
 <body>
@@ -27,34 +27,14 @@
             <div class="col-sm-4 invoice-col">
               Kepada
               <address>
-              @foreach($results as $key => $value)
-                @if($loop->first)
-                  <strong>{{$value->customer}}</strong><br>
-                  {{$value->alamat}}<br>
-                @else
-                  @break
-                @endif
-              @endforeach
-                <!-- <strong>Perusahaan Westra</strong><br>
-                Jalan Bumi 3 No.19 Kemanggisan<br>
-                Surabaya, 61120<br>
-                Phone: (555) 539-1037<br>
-                Email: joko@westra.com-->
+                <strong>{{$trans[0]->customer}}</strong><br>
+                {{$trans[0]->alamat}}<br>
               </address>
             </div>
             <!-- /.info customer -->
             <div class="col-sm-4 invoice-col">
-              <!-- <b>Delivery Order #007612</b><br> -->
-              @foreach($results as $key => $value)
-                @if($loop->first)
-                  <b>Payment #</b> <br>{{$value->id_tr}}<br>
-                  <b>Tanggal dibuat</b> <br>{{$value->created_at}}<br>
-                @else
-                  @break
-                @endif
-              @endforeach
-              <!-- <b>Order ID:</b> 4F3S8J<br>
-              <b>Tanggal:</b> 2/22/2014<br> -->
+              <b>Payment #</b> <br>{{$trans[0]->id_tr}}<br>
+              <b>Tanggal dibuat</b> <br>{{$trans[0]->created_at}}<br>
             </div>
             <!-- /.info  -->
           </div>
@@ -92,13 +72,7 @@
                     <th></th>
                     <th></th>
                     <th>Total</th>
-                    @foreach($total as $key => $value)
-                      @if($loop->first)
-                        <th>{{$value->total}}</th>
-                      @else
-                        @break
-                      @endif
-                    @endforeach
+                    <th>{{$quo[0]->total}}</th>
                     <!-- <th></th> -->
                   </tr>
                 </tfoot>
@@ -111,13 +85,7 @@
           <!-- /.row -->
           <div class="row">
             <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-9 text-center">
-              @foreach($tanggaldibuat as $key => $value)
-                @if($loop->first)
-                  <p>Tanggal {{$value->waktu_sekarang}}</p>
-                @else
-                  @break
-                @endif
-              @endforeach
+              <p>Tanggal {{$tanggaldibuat[0]->waktu_sekarang}}</p>
             </div>
             <div class="clearfix" style="height: 8rem"></div>
             <div class="col-md-2 col-md-offset-10 col-sm-2 col-xs-offset-9 text-center" >
