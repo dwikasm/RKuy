@@ -7,14 +7,6 @@
         <h4><i class="fa fa-eye"></i> Detail Quotations</h4>
       </div>
       <div class="panel-body">
-
-        <div class=row>
-          <div class="col-md-2">
-            <a href="{{Url('/quotation/cetak')}}" class="btn btn-primary btn-sm">
-             <i class="fa fa-print"></i> Cetak</a>
-          </div>
-        </div>
-        <br></br>
         <div class=row>
           <div class="col-md-12">                                                                                      
             <div class="table-responsive">          
@@ -40,8 +32,16 @@
               </table>
             </div>
           </div>
+        </div>
         <!-- /.row -->
+        <div class="row no-print">
+          <div class="col-md-12 text-right">
+            <a href="javascript:window.print()"<button type="button" class="btn btn-default pull-left"/><i class="fa fa-print"></i> Cetak</button></a>
+          </div>
+        </div>
+        <!-- /.row cetak -->
       </div>
-    </div>  
-  </div>
+      <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
 @stop

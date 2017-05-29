@@ -42,7 +42,7 @@
                   {{csrf_field()}}
                   <div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
                     <label>Nama Quotation</label>
-                    <input type="text" name="NamaQuotation" class="form-control" placeholder="Isi nama quotation" required="true">
+                    <input type="text" name="namaquotation" class="form-control" placeholder="Isi nama quotation" required="true">
                     {!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
                   </div>
                   <!-- /. errors -->

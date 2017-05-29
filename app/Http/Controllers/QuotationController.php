@@ -68,7 +68,7 @@ class QuotationController extends Controller
         return view('/quotation/tambahquotation', ['order'=>$arrayProduk, 'produks'=>$produks, 'total' => $total]);
     }
 
-    public function cancalproduk(Request $request)
+    public function cancelproduk(Request $request)
     {
         $request->session()->put('produks', []);
         return redirect('/quotation');
@@ -78,14 +78,19 @@ class QuotationController extends Controller
     {
         if ($request->session()->has('produks'))
         {
+            $total = 0;
+            foreach ($request->session()->get('produks') as $produk)
+            {
+                $total += $produk->subtotal;
+            }
             $produks = $request->session()->get('produks');
             $request->session()->put('produks', []);
-            $request->session()->put('total', 0);
+            #$request->session()->put('total', 0);
             if (count($produks) > 0)
             {
                 $quotation = new Quotation();
-                $quotation->total = $request->session()->get('total');
-                $quotation->nama_quo = $request->input('customer');
+                $quotation->total = $total;
+                $quotation->nama_quo = $request->input('namaquotation');
                 $quotation->save();
 
                 foreach ($produks as $produk)

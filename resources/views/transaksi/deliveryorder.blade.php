@@ -127,7 +127,7 @@
           </div>
           <div class="row no-print">
             <div class="col-md-12 text-right">
-              <a href="javascript:window.print()"<button type="button" class="btn btn-default pull-left"/><i class="fa fa-print"></i> Cetak</button></a>
+              <a href="javascript:window.print()"><button type="button" class="btn btn-default pull-left"/><i class="fa fa-print"></i> Cetak</button></a>
             </div>
           </div>
         </div>
