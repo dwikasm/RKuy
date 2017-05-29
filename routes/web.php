@@ -26,6 +26,7 @@ Route::get('/transaksi/tambah', 'TransaksiController@tambah');
 Route::get('/transaksi/deliveryorder/{id}', 'TransaksiController@deliveryorder');
 Route::get('/transaksi/paymentreceipt/{id}', 'TransaksiController@paymentreceipt');
 Route::get('/transaksi/proofofitemreceipt/{id}', 'TransaksiController@proofofitemreceipt');
+Route::post('/transaksi/submit_data', 'TransaksiController@submit_data');
 //Quotation
 Route::get('/quotation', 'QuotationController@lihat');
 Route::get('/quotation/cetak', 'QuotationController@cetak');

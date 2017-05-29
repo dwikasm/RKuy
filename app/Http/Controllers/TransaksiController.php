@@ -32,7 +32,24 @@ class TransaksiController extends Controller
     }
     public function tambah()
     {
-        return view('/transaksi/tambahtransaksi');
+        $query = DB::select("SELECT id_quo
+            FROM data_quotation");
+        return view('/transaksi/tambahtransaksi', compact('query'));
+    }
+    public function submit_data(Request $request)
+    {
+        $idquo = DB::select("SELECT id_quo
+            FROM data_quotation
+            where nama_quo = '".$request->input('namaquo')."'");
+        //dd ($idquo);
+        $transaksi = new Transaksi();
+        //$transaksi->id_quo = $request->input('idquo');
+        $transaksi->id_quo = $idquo[0]->id_quo;
+        $transaksi->customer = $request->input('customer');
+        $transaksi->alamat = $request->input('alamat');
+        $transaksi->save();
+        $transaksis = Transaksi::all();
+        return view('transaksi.lihattransaksi', compact('transaksis'));
     }
     public function deliveryorder($id)
     {

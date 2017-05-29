@@ -8,13 +8,22 @@
 			<h3>Tambah Transaksi</h3>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<form action="#" method="post">
+						<form action="/transaksi/submit_data" method="post">
  							{{csrf_field()}}
+ 							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
+ 								<input type="text" name="namaquo" class="form-control" placeholder="Nama Quotation">
+ 								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
+ 							</div>
  							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
  								<input type="text" name="customer" class="form-control" placeholder="Customer">
  								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
  							</div>
- 							<div id="divTambahBarang" class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
+ 							<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
+ 								<input type="text" name="alamat" class="form-control" placeholder="Alamat Customer">
+ 								{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
+ 							</div>
+
+ 							<!-- <div id="divTambahBarang" class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
  								<div class="form-group col-md-4">
 	 								<label for="sel1">Pilih Barang</label>
 							          <select class="form-control" id="sel1">
@@ -32,12 +41,15 @@
 						        	<label>Tambahkan</label>
 	 								<button id="buttonTambah" type="button" class="btn btn-default"">tambah</button>
 						        </div>
- 							</div>
+ 							</div> -->
+ 							<div class="pull-right">
+                    			<button type="submit" class="btn btn-default btn-sm">Selesai</button>
+                  			</div>
 						</form>
 					</div>
 				</div>
 		</div>
-		<div class="col-md-4">
+		<!-- <div class="col-md-4">
 		<h3>Keranjang Transaksi</h3> 
 			<div class="panel panel-default">
 				<div class="table-responsive">
@@ -73,7 +85,7 @@
 					</table>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 
