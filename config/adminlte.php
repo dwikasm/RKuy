@@ -106,7 +106,6 @@ return [
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     |
     */
-
     'menu' => [
         // 'MAIN NAVIGATION',
         // [
@@ -135,63 +134,14 @@ return [
             'icon' => 'archive',
             'url'  => '/kelolabarang',
         ],
-        // [
-        //     'text' => 'Laporan Keuangan',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'share',
-        //     'url'  => '/laporankeuangan',
-        // ],
-        // [
-        //     'text'    => 'Kelola Barang',
-        //     'icon'    => 'share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'Level One',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'Level One',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'Level Two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'Level Two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'Level Three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'Level Three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'Level One',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // 'LABELS',
-        // [
-        //     'text'       => 'Important',
-        //     'icon_color' => 'red',
-        // ],
-        // [
-        //     'text'       => 'Warning',
-        //     'icon_color' => 'yellow',
-        // ],
-        // [
-        //     'text'       => 'Information',
-        //     'icon_color' => 'aqua',
-        // ],
+    ],
+     'menu1' =>[
+        [
+            'text'        => 'Transaksi',
+            'url'         => 'admin/pages',
+            'icon'        => 'suitcase',
+            'url'         => '/transaksi',
+        ],
     ],
 
     /*

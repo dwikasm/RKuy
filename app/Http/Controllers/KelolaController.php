@@ -8,6 +8,12 @@ use App\Produk;
 
 class KelolaController extends Controller
 {
+
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
 	public function lihat()
 	{
 		//return view('/kelolabarang/lihatkelola');

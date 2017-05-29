@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class LaporanController extends Controller
 {
+
+
+
     public function laporan()
     {
         return view('laporankeuangan');
