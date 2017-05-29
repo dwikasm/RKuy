@@ -8,7 +8,13 @@
       </div>
       <div class="panel-body">
         <div class=row>
-          <div class="col-md-12">                                                                                      
+          <div class="col-md-6 col-xs-6">
+            <h3>{{ $quo[0]->nama_quo }} <small>Quotation #{{ $quo[0]->id_quo }}</small></h3>
+          </div>
+          <div class="col-md-2 col-md-offset-4 col-xs-2 col-xs-offset-4">
+            <h3><small>{{ $quo[0]->created_at }}</small></h3>
+          </div>
+          <div class="col-md-12 col-xs-12">
             <div class="table-responsive">          
               <table id="table" class="table table-bordered table-condensed table-hover">
                 <thead>
@@ -16,7 +22,7 @@
                     <th>Nama Barang</th>
                     <th>Jumlah Barang</th>
                     <th>Harga Satuan</th>
-                    <th>Total Harga</th>
+                    <th>Subtotal Harga</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -29,6 +35,14 @@
                   </tr>
                   @endforeach
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total</th>
+                    <th>{{ $quo[0]->total }}</th>
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </div>

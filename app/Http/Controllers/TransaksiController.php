@@ -22,12 +22,17 @@ class TransaksiController extends Controller
     }
     public function detail($id)
     {
+        $trans = DB::select("   SELECT *
+                                FROM data_transaksi
+                                WHERE data_transaksi.id_tr = ".$id);
         $results = DB::select("SELECT* 
                 FROM produk
                 INNER JOIN data_quotation_produk ON data_quotation_produk.id_pro = produk.id_pro 
                 WHERE data_quotation_produk.id_quo = ".$id);
-        //dd($results);
-        return view('/transaksi/detailtransaksi', compact('results'));
+        $quo = DB::select("SELECT * FROM data_quotation WHERE data_quotation.id_quo = ".$id);
+        // dd($trans);
+        // dd($results);
+        return view('/transaksi/detailtransaksi', compact('trans','results','quo'));
 
     }
     public function tambah()
