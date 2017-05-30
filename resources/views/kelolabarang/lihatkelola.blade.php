@@ -53,7 +53,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="pull-left btn btn-default btn-sm" data-dismiss="modal">Tidak</button>
-                          <a href="{{Url('/kelolabarang/delete/'.$value->id_pro)}}"><button type="button" class="btn btn-default btn-sm">Iya, hapus</button>
+                          <a href="{{Url('/kelolabarang/delete/'.$value->id_pro)}}"><button type="button" class="btn btn-default btn-sm">Hapus</button>
                       </a>
                         </div>
                       </div>
