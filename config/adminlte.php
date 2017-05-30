@@ -125,17 +125,6 @@ return [
             'icon' => 'archive',
             'url'  => '/kelolabarang',
         ],
-<<<<<<< HEAD
-    ],
-     'menu1' =>[
-        [
-            'text'        => 'Transaksi',
-            'url'         => 'admin/pages',
-            'icon'        => 'suitcase',
-            'url'         => '/transaksi',
-        ],
-=======
->>>>>>> 0544d19a36e19c3c3573f782f1193e8664347a87
     ],
 
     /*
