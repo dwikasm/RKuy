@@ -26,29 +26,5 @@ class DataQuotationTableSeeder extends Seeder
         $data->total = 550000;
         $data->id_quo = 2;
         $data->save();
-
-        $data = new Quotation();
-        $data->nama_quo = 'Medical Center Surabaya';
-        $data->total = 5100000;
-        $data->id_quo = 3;
-        $data->save();
-
-        $data = new Quotation();
-        $data->nama_quo = 'RS Sutomo Surabaya';
-        $data->total = 9240000;
-        $data->id_quo = 4;
-        $data->save();
-
-        $data = new Quotation();
-        $data->nama_quo = 'RS Haji Surabaya';
-        $data->total = 20800000;
-        $data->id_quo = 5;
-        $data->save();
-
-        $data = new Quotation();
-        $data->nama_quo = 'Peralatan Pak Rahmat Darmawan';
-        $data->total = 39000000;
-        $data->id_quo = 6;
-        $data->save();
 	}
 }
