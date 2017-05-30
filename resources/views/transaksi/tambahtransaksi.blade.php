@@ -9,7 +9,7 @@
 					<h4><i class="fa fa-plus-circle"></i> Tambah Transaksi</h4>
 				</div>
 				<div class="panel-body">
-					<form action="/transaksi/submit_data" method="post">
+					<form action="{{url('/transaksi/submit_data')}}" method="post">
 						{{csrf_field()}}
 						<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
 							<label>Nama Quotation</label>
@@ -22,12 +22,12 @@
 						</div>
 						<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
 							<label>Customer</label>
-							<input type="text" name="customer" class="form-control" placeholder="Nama Customer">
+							<input type="text" name="customer" class="form-control" placeholder="Nama Customer" required>
 							{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
 						</div>
 						<div class="form-group{{ $errors->has('nrp') ? ' has-error' : '' }}">
 							<label>Alamat</label>
-							<input type="text" name="alamat" class="form-control" placeholder="Alamat Customer">
+							<input type="text" name="alamat" class="form-control" placeholder="Alamat Customer" required>
 							{!! $errors->first('nama', '<p class="help-block">:message</p>') !!}
 						</div>
 						<div class="pull-right">
