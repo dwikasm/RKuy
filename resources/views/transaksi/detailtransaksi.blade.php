@@ -8,18 +8,21 @@
       </div>
       <div class="panel-body">
         <div class="row no-print">
-          <div class="col-md-2">
-            <a href="{{Url('/transaksi/deliveryorder/'.$trans[0]->id_tr)}}" class="btn btn-primary btn-sm">
-              <i class="fa fa-plus-circle"></i> Buat Delivery Order</a>
-          </div>
-          <div class="col-md-2">
-            <a href="{{Url('/transaksi/paymentreceipt/'.$trans[0]->id_tr)}}" class="btn btn-primary btn-sm">
-              <i class="fa fa-plus-circle"></i> Buat Payment Receipt</a>
-          </div>
+          @if(Auth::user()->name == 'pengendalidokumen')
+            <div class="col-md-2">
+              <a href="{{Url('/transaksi/deliveryorder/'.$trans[0]->id_tr)}}" class="btn btn-primary btn-sm">
+                <i class="fa fa-plus-circle"></i> Buat Delivery Order</a>
+            </div>
+            <div class="col-md-2">
+              <a href="{{Url('/transaksi/paymentreceipt/'.$trans[0]->id_tr)}}" class="btn btn-primary btn-sm">
+                <i class="fa fa-plus-circle"></i> Buat Payment Receipt</a>
+            </div>
+          @else
           <div class="col-md-2">
             <a href="{{Url('/transaksi/proofofitemreceipt/'.$trans[0]->id_tr)}}" class="btn btn-primary btn-sm">
               <i class="fa fa-plus-circle"></i> Buat Proof of Item Receipt</a>
           </div>
+          @endif
         </div>
         <!-- /.tombol tombol -->
         <div class="row" style="margin-top: 1rem">

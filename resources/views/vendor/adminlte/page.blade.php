@@ -92,9 +92,25 @@
             <section class="sidebar">
 
                 <!-- Sidebar Menu -->
+<!--                 <ul class="sidebar-menu">
+                    @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
+                </ul>
+ -->                <!-- /.sidebar-menu -->
+                <!-- Sidebar Menu -->
                 <ul class="sidebar-menu">
-                    @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
-                    @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
+                    <li class="">
+                        <a href="{{Url('/transaksi')}}"><i class="fa fa-fw fa-suitcase "></i><span>Transaksi</span></a>
+                    </li>
+                    @if(Auth::user()->name == 'pengendalidokumen')
+                    <li class="">
+                        <a href="{{Url('/quotation')}}"><i class="fa fa-fw fa-list "></i><span>Quotation</span></a>
+                    </li>
+                    @endif
+                    @if(Auth::user()->name == 'pengelolapenyimpanan')
+                    <li class="">
+                        <a href="{{Url('/kelolabarang')}}"><i class="fa fa-fw fa-archive "></i><span>Kelola Barang</span></a>
+                    </li>
+                    @endif
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

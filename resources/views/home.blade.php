@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'SI Maju Jaya')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -8,6 +8,6 @@
 
 @section('content')
     <div class="callout callout-success">
-      <h4><i class="fa fa-check"></i> You are logged in!</h4>
+      <h4><i class="fa fa-check"></i> Selamat datang {{ Auth::user()->name }}!</h4>
     </div>
 @stop

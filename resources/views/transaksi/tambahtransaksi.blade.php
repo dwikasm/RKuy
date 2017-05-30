@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'SI MAJU JAYA')
+@section('title', 'SI Maju Jaya')
 @section('content_header')@stop
 @section('content')
   	<div class="row">

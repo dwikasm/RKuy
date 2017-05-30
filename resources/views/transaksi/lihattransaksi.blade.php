@@ -8,9 +8,11 @@
       </div>
       <div class="panel-body">
         <div class=row>
+          @if(Auth::user()->name == 'pengendalidokumen')
           <div class="col-md-12" style="padding-bottom: 1.5rem">
             <a href="{{Url('/transaksi/tambah')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Tambah Transaksi Baru</a>
           </div>
+          @endif
           <!-- /.col-md-12 -->
           <div class="col-md-12">
             <div class="table-responsive">          

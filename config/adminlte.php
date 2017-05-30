@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'PT Maju Jaya',
+    'title' => 'SI Maju Jaya',
 
     'title_prefix' => '',
 
