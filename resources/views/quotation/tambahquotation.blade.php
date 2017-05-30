@@ -78,12 +78,12 @@
                   </div>
                 </form>
                 <!-- /. nama quotation -->
-                <form action="/quotation/cancelproduk" method="POST">
+                <!-- <form action="/quotation/cancelproduk" method="POST">
                   {{csrf_field()}}
                   <div class="pull-right" style="margin-right: 1rem">
                     <button type="submit" class="btn btn-danger btn-sm">Batal</button>
                   </div>
-                </form>
+                </form> -->
                 <!-- /. batal submit -->
               </div>
             </div>
